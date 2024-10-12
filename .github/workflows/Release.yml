@@ -16,7 +16,6 @@ jobs:
       - name: Clone develop repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.PAT }}
           ref: "develop"
 
       - name: Get current version
