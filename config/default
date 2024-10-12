@@ -16,7 +16,7 @@ get_img_name() {
     fi
 }
 
-DIST_VERSION="1.3.7"
+DIST_VERSION="1.3.8"
 BASE_ZIP_IMG="$(get_img_name)"
 DIST_NAME="MainsailOS"
 
