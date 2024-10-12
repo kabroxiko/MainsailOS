@@ -16,7 +16,6 @@ jobs:
       - name: Clone develop repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.PAT }}
           ref: "develop"
 
       - name: Get current version
@@ -48,8 +47,8 @@ jobs:
     steps:
       - uses: everlytic/branch-merge@1.1.5
         with:
-          github_token: ${{ secrets.PAT }}
-          source_ref: "develop"
+          github_token: ${{ github.token }}
+          source_ref: ${{ github.ref }}
           target_branch: "master"
           commit_message_template: "[Automated] Merged {source_ref} into target {target_branch}"
 
@@ -370,7 +369,6 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: "develop"
-          token: ${{ secrets.PAT }}
           fetch-depth: 0
 
       - name: Get latest tag

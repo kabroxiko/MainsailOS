@@ -108,7 +108,7 @@ cp "${ORANGEPI_CONFIG_TXT_FILE}" "${ORANGEPI_CONFIG_BAK_FILE}"
 ### Substep 2: Enable SPI in armbianEnv.txt depending on device
 
 #### Orangepi Zero2
-if [[ "$(is_board_type)" == "orangepizero2" ]] &&
+if [[ "$(is_board_type)" == "orangepizeroplus2-h5" ]] &&
 [[ "${ORANGEPI_ENABLE_OVERLAYS_OPIZ2}" == "true" ]]; then
 
     if [[ -n "${ORANGEPI_ADD_OVERLAYS_OPIZ2}" ]]; then
