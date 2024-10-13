@@ -72,7 +72,7 @@ unpack /filesystem/home/"${BASE_USER}" /home/"${BASE_USER}" "${BASE_USER}"
 ## create python virtualenv and install klipper requirements
 pushd "/home/${BASE_USER}" &> /dev/null || exit 1
 echo_green "Compilando mcu Linux ..."
-sudo -u "${BASE_USER}" make menuconfig -j10
+sudo -u "${BASE_USER}" make -j10
 sudo -u "${BASE_USER}" make flash
 usermod -a -G tty pi
 cp klipper/scripts/klipper-mcu.service /etc/systemd/system/

@@ -1,0 +1,8 @@
+# https://github.com/freakydude/klipper-serial-btt
+
+apt -y install socat
+cp serial-btt-bridge.service /etc/systemd/system
+systemctl enable serial-btt-bridge.service
+
+sudo -u "${BASE_USER}" ln -s /home/pi/klipper-serial-btt/fd-macros fd-macros
+sudo -u "${BASE_USER}" ln -s /home/pi/klipper-serial-btt/fd-macros-example.cfg fd-macros-example.cfg

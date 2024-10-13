@@ -1,0 +1,26 @@
+[Unit]
+Description=Bridge BTT Touchscreen wired with UART to virtual Klipper console
+After=klipper.service
+Wants=klipper.service
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+User=klipper
+RemainAfterExit=yes
+ExecStart=/usr/bin/socat -v /dev/ttyS3,b115200 /home/klipper/printer_data/comms/klippy.serial,b115200
+#ExecStart=socat -d -d PTY,link=/dev/ttyV1,waitslave,echo=0,raw,unlink-close=0 TCP-LISTEN:11313,reuseaddr,fork
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=artillery_tft
+Restart=always
+RestartSec=15
+
+# no funciona:
+# socat -v -d -d  PTY,link=/dev/ttyS2,waitslave,echo=0,raw,unlink-close=0 TCP:/home/klipper/printer_data/comms/klippy.sock,reuseaddr,fork
+# /usr/bin/socat -v PTY,link=/dev/ttyS2 PTY,link=/home/klipper/printer_data/comms/klippy.sock
+# /usr/bin/socat -v PTY,link=/dev/ttyS2 tcp-l:/home/klipper/printer_data/comms/klippy.sock
+# /usr/bin/socat -v PTY,link=/dev/ttyS2 tcp:/home/klipper/printer_data/comms/klippy.sock
+# /usr/bin/socat -v /dev/ttyS2,b115200 SOCKET-CONNECT:/home/klipper/printer_data/comms/klippy.sock
