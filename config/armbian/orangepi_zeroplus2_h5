@@ -12,6 +12,7 @@ DOWNLOAD_URL_CHECKSUM="${DOWNLOAD_BASE_URL}/armbian-orangepi_zeroplus2_h5_bullse
 DOWNLOAD_URL_IMAGE="${DOWNLOAD_BASE_URL}/armbian-orangepi_zeroplus2_h5_bullseye.img.xz"
 
 BASE_IMAGE_ENLARGEROOT=3000
+MODULES="base(pkgupgrade,udev_fix,orangepi(orangepi_net,mainsailos,klipper,is_req_preinstall,moonraker,mainsail,timelapse,crowsnest,wiringOP))"
 
 # export Variables
 export BASE_ARCH
