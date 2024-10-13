@@ -1,0 +1,37 @@
+#!/bin/bash
+#### wiringOP - A webcam Service for multiple Cams and Stream Services.
+####
+#### Written by Stephan Wendel aka KwadFan <me@stephanwe.de>
+#### Copyright 2021 - till today
+#### https://github.com/mainsail-crew/wiringOP
+####
+#### This File is distributed under GPLv3
+####
+# shellcheck disable=all
+
+# wiringOP repo
+[[ -n "$WIRINGOP_REPO_SHIP" ]] || WIRINGOP_REPO_SHIP="https://github.com/orangepi-xunlong/wiringOP.git"
+[[ -n "$WIRINGOP_REPO_BRANCH" ]] || WIRINGOP_REPO_BRANCH="master"
+
+# # wiringOP setup
+# [[ -n "$WIRINGOP_DEFAULT_CONF" ]] || WIRINGOP_DEFAULT_CONF="resources/wiringOP.conf"
+# [[ -n "$WIRINGOP_CONFIG_PATH" ]] || WIRINGOP_CONFIG_PATH="/home/${BASE_USER}/printer_data/config"
+# [[ -n "$WIRINGOP_LOG_PATH" ]] || WIRINGOP_LOG_PATH="/home/${BASE_USER}/printer_data/logs"
+# [[ -n "$WIRINGOP_ENV_PATH" ]] || WIRINGOP_ENV_PATH="/home/${BASE_USER}/printer_data/systemd"
+# [[ -n "$WIRINGOP_ADD_WIRINGOP_MOONRAKER" ]] || WIRINGOP_ADD_WIRINGOP_MOONRAKER="1"
+# [[ -n "$WIRINGOP_MOONRAKER_CONF_PATH" ]] || WIRINGOP_MOONRAKER_CONF_PATH="/home/${BASE_USER}/printer_data/config/moonraker.conf"
+
+
+# # ustreamer
+# [[ -n "$WIRINGOP_USTREAMER_REPO_SHIP" ]] || WIRINGOP_USTREAMER_REPO_SHIP="https://github.com/pikvm/ustreamer.git"
+# [[ -n "$WIRINGOP_USTREAMER_REPO_BRANCH" ]] || WIRINGOP_USTREAMER_REPO_BRANCH="master"
+
+# # camera-streamer
+# [[ -n "$WIRINGOP_CAMERA_STREAMER_REPO_SHIP" ]] || WIRINGOP_CAMERA_STREAMER_REPO_SHIP="https://github.com/ayufan/camera-streamer.git"
+# [[ -n "$WIRINGOP_CAMERA_STREAMER_REPO_BRANCH" ]] || WIRINGOP_CAMERA_STREAMER_REPO_BRANCH="master"
+
+# ###########################################################################
+# ### DO NOT EDIT BELOW THIS LINE, UNLESS YOU KNOW EXACTLY WHAT HAPPENDS! ###
+# ###########################################################################
+
+# WIRINGOP_UNATTENDED="1"

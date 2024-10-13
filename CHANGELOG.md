@@ -284,4 +284,3 @@ All notable changes to MainsailOS will be documented in this file.
 ### Other
 
 - Moves $httpupgrade and upstream servers to common config
-
