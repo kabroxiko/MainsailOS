@@ -2,10 +2,31 @@
 # Changelog
 All notable changes to MainsailOS will be documented in this file.
 
-## [1.3.2](https://github.com/mainsail-crew/MainsailOS/releases/tag/1.3.2) - 2024-01-20
+## [1.3.2](https://github.com/mainsail-crew/MainsailOS/releases/tag/1.3.2) - 2024-10-12
+### Features
+
+- **ci**: Add KlipperScreen module ([#284](https://github.com/mainsail-crew/MainsailOS/pull/284))
+
 ### Bug Fixes and Improvements
 
+- **build**: Fix location of boot partition ([#289](https://github.com/mainsail-crew/MainsailOS/pull/289))
+- **build**: Fix log file upload ([#297](https://github.com/mainsail-crew/MainsailOS/pull/297))
+- **ci**: Fix annotations from actions ([#285](https://github.com/mainsail-crew/MainsailOS/pull/285))
+- **moonraker**: PKGLIST variable rename ([#298](https://github.com/mainsail-crew/MainsailOS/pull/298))
 - Fix version number in release workflow ([#276](https://github.com/mainsail-crew/MainsailOS/pull/276))
+- Add supported sbc to non rpi images ([#277](https://github.com/mainsail-crew/MainsailOS/pull/277))
+
+### Refactor
+
+- Change version handling ([#296](https://github.com/mainsail-crew/MainsailOS/pull/296))
+
+### Other
+
+- **ci**: Skip build on push to master branch ([#280](https://github.com/mainsail-crew/MainsailOS/pull/280))
+- Update urls and base image version ([#288](https://github.com/mainsail-crew/MainsailOS/pull/288))
+- Add piwheels config, if it doesnt exists ([#290](https://github.com/mainsail-crew/MainsailOS/pull/290))
+- Change module order ([#291](https://github.com/mainsail-crew/MainsailOS/pull/291))
+- Switch to armbian for Opi Zero2 ([#292](https://github.com/mainsail-crew/MainsailOS/pull/292))
 
 ## [1.3.1](https://github.com/mainsail-crew/MainsailOS/releases/tag/1.3.1) - 2024-01-20
 ### Bug Fixes and Improvements
