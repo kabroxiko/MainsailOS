@@ -2,7 +2,7 @@
 # Changelog
 All notable changes to MainsailOS will be documented in this file.
 
-## [1.3.2](https://github.com/mainsail-crew/MainsailOS/releases/tag/1.3.2) - 2024-10-12
+## [1.3.5](https://github.com/mainsail-crew/MainsailOS/releases/tag/1.3.5) - 2024-10-13
 ### Features
 
 - **ci**: Add KlipperScreen module ([#284](https://github.com/mainsail-crew/MainsailOS/pull/284))
@@ -284,3 +284,4 @@ All notable changes to MainsailOS will be documented in this file.
 ### Other
 
 - Moves $httpupgrade and upstream servers to common config
+
