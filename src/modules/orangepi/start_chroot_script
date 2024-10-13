@@ -72,7 +72,7 @@ usermod -aG video,audio,plugdev,games,netdev,sudo,systemd-journal,gpio "${BASE_U
 ### END Substep 2
 
 ### Substep 3: Remove user "orangepi"
-sudo userdel orangepi
+sudo userdel orangepi || true
 sudo rm -rf /home/orangepi
 ### END Substep 3
 ## END Step 2
