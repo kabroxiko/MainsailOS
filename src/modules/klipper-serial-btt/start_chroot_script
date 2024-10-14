@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+
+#### klipper-serial-btt - A project to use BigTreeTech TouchScreens.
+####
+#### Written by freakyDude
+#### https://github.com/kabroxiko/klipper-serial-btt
+####
+
+# shellcheck enable=requires-variable-braces
+
+# Error handling
+set -Ee
+
+# shellcheck disable=SC1091
+source /common.sh
+install_cleanup_trap
+
+## Step 1: Install files
+unpack filesystem/root / root
+## END
+
+## Step 1.1: Install Depedencies
+# shellcheck disable=SC2086
+check_install_pkgs ${KLIPPER_SERIAL_BTT_DEPS}
+
+echo_green "Installing klipper-serial-btt ..."
+
+## Force apt update
+apt-get update
+## Make sure 'git' is installed!
+check_install_pkgs git
+
+## Step 1: Move to Home Dir as WorkingDirectoy
+pushd "/home/${BASE_USER}" &> /dev/null || exit 1
+
+## Step 2: clone klipper-serial-btt repo
+echo_green "Clone klipper-serial-btt repository ..."
+gitclone KLIPPER_SERIAL_BTT_REPO klipper-serial-btt
+
+## Step 3: Move to klipper-serial-btt as working directory
+pushd "/home/${BASE_USER}/printer_data/config" &> /dev/null || exit 1
+
+## Step 4: Create symbolic links
+echo_green "Create symbolic links ..."
+config_dir="/home/${BASE_USER}/printer_data/config"
+src_dir="/home/${BASE_USER}/klipper-serial-btt"
+sudo -u "${BASE_USER}" \
+ln -sf "$src_dir/fd-macros" "$config_dir/fd-macros"
+sudo -u "${BASE_USER}" \
+ln -sf "$src_dir/fd-macros-example.cfg" "$config_dir/fd-macros-example.cfg"
+systemctl enable serial-btt-bridge.service
+
+## Step 5: Leave klipper-serial-btt
+popd &> /dev/null || exit 1
+
+## Finish
+echo_green "Installing klipper-serial-btt ... DONE!"

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# shellcheck enable=requires-variable-braces
+
+# Error handling
+set -Ee
+
+# shellcheck disable=SC1091
+source /common.sh
+install_cleanup_trap
+
+echo_green "Copy files to 'printer_data' ..."
+unpack /filesystem/home/"${BASE_USER}" /home/"${BASE_USER}" "${BASE_USER}"

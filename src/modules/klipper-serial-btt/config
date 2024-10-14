@@ -1,0 +1,12 @@
+#!/bin/bash
+#### klipper-serial-btt - A project to use BigTreeTech TouchScreens.
+####
+#### Written by freakyDude
+#### https://github.com/kabroxiko/klipper-serial-btt
+####
+# shellcheck disable=all
+
+# klipper-serial-btt repo
+[[ -n "$KLIPPER_SERIAL_BTT_REPO_SHIP" ]] || KLIPPER_SERIAL_BTT_REPO_SHIP="https://github.com/kabroxiko/klipper-serial-btt.git"
+[[ -n "$KLIPPER_SERIAL_BTT_REPO_BRANCH" ]] || KLIPPER_SERIAL_BTT_REPO_BRANCH="main"
+[[ -n "$KLIPPER_SERIAL_BTT_DEPS" ]] || KLIPPER_SERIAL_BTT_DEPS="socat"

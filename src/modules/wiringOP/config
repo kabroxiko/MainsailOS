@@ -1,0 +1,11 @@
+#!/bin/bash
+#### wiringOP - This is a GPIO access library for OrangePi.
+####
+#### https://github.com/orangepi-xunlong/wiringOP
+####
+####
+# shellcheck disable=all
+
+# wiringOP repo
+[[ -n "$WIRINGOP_REPO_SHIP" ]] || WIRINGOP_REPO_SHIP="https://github.com/orangepi-xunlong/wiringOP.git"
+[[ -n "$WIRINGOP_REPO_BRANCH" ]] || WIRINGOP_REPO_BRANCH="master"

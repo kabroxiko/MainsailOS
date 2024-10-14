@@ -101,6 +101,22 @@ if [[ "$(is_board_type)" == "orangepi4-lts" ]]; then
     echo "param_spidev_spi_bus=1" >> "${ARMBIAN_CONFIG_TXT_FILE}"
 fi
 
+#### OrangePi Zero Plus 2 H5
+if [[ "$(is_board_type)" == "orangepizeroplus2-h5" ]] &&
+[[ "${ARMBIAN_ENABLE_OVERLAYS_OPIZ2}" == "true" ]]; then
+
+    if [[ -n "${ARMBIAN_ADD_OVERLAYS_OPIZ2}" ]]; then
+        echo_green "Adding overlays '${ARMBIAN_ADD_OVERLAYS_OPIZ2}' to ${ARMBIAN_CONFIG_TXT_FILE} ..."
+        sed -i "s/\(overlays\)=.*/\1=${ARMBIAN_ADD_OVERLAYS_OPIZ2}/g" "${ARMBIAN_CONFIG_TXT_FILE}"
+    fi
+
+    if [[ -n "${ARMBIAN_ADD_OVERLAYS_OPIZ2_PARAMS}" ]]; then
+        for param in ${ARMBIAN_ADD_OVERLAYS_OPIZ2_PARAMS}; do
+            echo_green "Add ${param} to ${ARMBIAN_CONFIG_TXT_FILE} ..."
+            echo "${param}" >> "${ARMBIAN_CONFIG_TXT_FILE}"
+        done
+    fi
+fi
 
 #### Orangepi Zero2
 if [[ "$(is_board_type)" == "orangepizero2" ]] &&

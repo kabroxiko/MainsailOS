@@ -12,7 +12,7 @@
 # shellcheck disable=all
 
 [[ -n "$ARMBIAN_DEPS" ]] || ARMBIAN_DEPS="armbian-config avahi-daemon iptables \
-bash-completion"
+bash-completion vim"
 [[ -n "$ARMBIAN_CONFIG_TXT_FILE" ]] || ARMBIAN_CONFIG_TXT_FILE="/boot/armbianEnv.txt"
 [[ -n "$ARMBIAN_CONFIG_BAK_FILE" ]] || ARMBIAN_CONFIG_BAK_FILE="/boot/armbianEnv.txt.backup"
 [[ -n "$ARMBIAN_MODULES_FILE" ]] || ARMBIAN_MODULES_FILE="/etc/modules"
@@ -25,5 +25,5 @@ bash-completion"
 
 ## Orange Pi Zero 2 additional configuration
 [[ -n "$ARMBIAN_ENABLE_OVERLAYS_OPIZ2" ]] || ARMBIAN_ENABLE_OVERLAYS_OPIZ2="true"
-[[ -n "$ARMBIAN_ADD_OVERLAYS_OPIZ2" ]] || ARMBIAN_ADD_OVERLAYS_OPIZ2="i2c3 uart5 spi-spidev"
-[[ -n "$ARMBIAN_ADD_OVERLAYS_OPIZ2_PARAMS" ]] || ARMBIAN_ADD_OVERLAYS_OPIZ2_PARAMS="param_spidev_spi_bus=1 param_spidev_spi_cs=1"
+[[ -n "$ARMBIAN_ADD_OVERLAYS_OPIZ2" ]] || ARMBIAN_ADD_OVERLAYS_OPIZ2="gpio-regulator-1.3v spi-spidev uart2 usbhost2 usbhost3"
+[[ -n "$ARMBIAN_ADD_OVERLAYS_OPIZ2_PARAMS" ]] || ARMBIAN_ADD_OVERLAYS_OPIZ2_PARAMS="param_spidev_spi_bus=1"
