@@ -161,3 +161,7 @@ If you didnt change the hostname during initial flash, you could use
     http://OS_NAME.local
 
 6.) Enjoy OS_NAME :)
+
+
+
+nmcli --offline connection add con-name BERTOLUCCI ipv4.method manual type wifi ssid BERTOLUCCI ifname wlan0 > /etc/NetworkManager/system-connections/BERTOLUCCI.nmconnection

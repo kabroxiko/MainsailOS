@@ -75,16 +75,16 @@ echo_green "Compilando mcu Linux ..."
 sudo -u "${BASE_USER}" make -j10
 sudo -u "${BASE_USER}" make flash
 usermod -a -G tty pi
+cp scripts/klipper-mcu.service /etc/systemd/system/
+systemctl enable klipper-mcu.service
 popd &> /dev/null || exit 1
 
 ## create python virtualenv and install klipper requirements
 pushd "/home/${BASE_USER}" &> /dev/null || exit 1
-cp klipper/scripts/klipper-mcu.service /etc/systemd/system/
-systemctl enable klipper-mcu.service
 echo_green "Creating Virtualenv for Klipper (klippy-env) ..."
 sudo -u "${BASE_USER}" virtualenv -p python3 "${KLIPPER_PYTHON_DIR}"
 echo_green "Installing klippy Python Dependencies ..."
-sudo -u "${BASE_USER}" "${KLIPPER_PYTHON_DIR}"/bin/pip install -r "${KLIPPER_SRC_DIR}"/"${KLIPPER_PYENV_REQ}"
+sudo -u "${BASE_USER}" "${KLIPPER_PYTHON_DIR}"/bin/pip install --no-cache-dir -r "${KLIPPER_SRC_DIR}"/"${KLIPPER_PYENV_REQ}"
 popd &> /dev/null || exit 1
 
 ## Enable systemd service
