@@ -8,7 +8,7 @@ WantedBy=multi-user.target
 
 [Service]
 Type=simple
-User=klipper
+User=pi
 RemainAfterExit=yes
 ExecStart=/usr/bin/socat -v /dev/ttyS2,b115200 /home/pi/printer_data/comms/klippy.serial,b115200
 #ExecStart=socat -d -d PTY,link=/dev/ttyV1,waitslave,echo=0,raw,unlink-close=0 TCP-LISTEN:11313,reuseaddr,fork
