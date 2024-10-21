@@ -8,8 +8,8 @@ DOWNLOAD_BASE_URL="https://github.com/kabroxiko/armbian-builds/releases/latest/d
 
 # Image source
 # DOWNLOAD_URL_CHECKSUM="${DOWNLOAD_BASE_URL}.xz.sha"
-DOWNLOAD_URL_CHECKSUM="${DOWNLOAD_BASE_URL}/armbian-orangepi_zeroplus2_h5_bookworm.img.xz.sha256"
-DOWNLOAD_URL_IMAGE="${DOWNLOAD_BASE_URL}/armbian-orangepi_zeroplus2_h5_bookworm.img.xz"
+DOWNLOAD_URL_CHECKSUM="${DOWNLOAD_BASE_URL}/armbian-orangepi_zeroplus2_h5_bullseye.img.xz.sha256"
+DOWNLOAD_URL_IMAGE="${DOWNLOAD_BASE_URL}/armbian-orangepi_zeroplus2_h5_bullseye.img.xz"
 
 BASE_IMAGE_ENLARGEROOT=3000
 MODULES="base(kiauh,pkgupgrade,udev_fix,armbian(armbian_net,mainsailos,klipper,is_req_preinstall,moonraker,mainsail,wiringOP,klipper-serial-btt,artillery))"
