@@ -1,13 +1,45 @@
 #!/usr/bin/env bash
+#### Artillery Install Module
+####
+#### Based on work done by Raymond Himle and Stefan Dej
+####
+#### Written by Stephan Wendel aka KwadFan <me@stephanwe.de>
+#### Copyright 2022
+#### https://github.com/mainsail-crew/MainsailOS
+####
+#### This File is distributed under GPLv3
+####
 
-# shellcheck enable=requires-variable-braces
+# shellcheck enable=require-variable-braces
 
-# Error handling
-set -Ee
+## Source error handling, leave this in place
+set -Eex
 
 # shellcheck disable=SC1091
 source /common.sh
 install_cleanup_trap
 
+# Copy printer_data for klipper/artillery
 echo_green "Copy files to 'printer_data' ..."
 unpack /filesystem/home/"${BASE_USER}" /home/"${BASE_USER}" "${BASE_USER}"
+
+echo_green "Installing tftbridge ..."
+
+## Force apt update
+apt-get update
+## Make sure 'git' is installed!
+check_install_pkgs git
+
+pushd "/home/${BASE_USER}" &> /dev/null || exit 1
+
+## Step 2: clone tftbridge repo
+echo_green "Clone tftbridge repository ..."
+gitclone TFTBRIDGE_REPO tftbridge
+popd &> /dev/null || exit 1
+
+## Link component
+if [[ -d "${KLIPPER_EXTRAS_DIR}" ]]; then
+    echo "Linking extension to klippy ..."
+    sudo -u "${BASE_USER}" \
+    ln -sf "${TFTBRIDGE_SRC_DIR}/tftbridge.py" "${KLIPPER_EXTRAS_DIR}/tftbridge.py"
+fi

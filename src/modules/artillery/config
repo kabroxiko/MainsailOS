@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 #### Post Rename
 ####
 #### Written by Stephan Wendel aka KwadFan <me@stephanwe.de>
@@ -9,4 +9,8 @@
 ####
 # shellcheck disable=all
 
-# Intentionally left blank
+[ -n "$TFTBRIDGE_REPO_SHIP" ] || TFTBRIDGE_REPO_SHIP="https://github.com/oldhui-uk/tftbridge.git"
+[ -n "$TFTBRIDGE_REPO_BRANCH" ] || TFTBRIDGE_REPO_BRANCH="main"
+[ -n "$TFTBRIDGE_SRC_DIR" ] || TFTBRIDGE_SRC_DIR="/home/${BASE_USER}/tftbridge"
+
+[ -n "$KLIPPER_EXTRAS_DIR" ] || KLIPPER_EXTRAS_DIR="/home/${BASE_USER}/klipper/klippy/extras"
